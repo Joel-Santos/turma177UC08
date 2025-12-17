@@ -12,4 +12,20 @@ export default class UsuarioModel{
         return db.query(sql, [nome, email]);  
     }
 
+    static buscarPorId(id){
+        const sql = `select id, nome, email from usuarios where id = $1`;
+        return db.query(sql, [id]);
+    }
+
+    static deletar(id){
+        const sql = `delete from usuarios where id = $1`;
+        return db.query(sql, [id]);
+    }
+
+    static atualizar(id, nome, email){
+        const sql = `update usuarios set nome = $1, email = $2 where id = $3`;
+        return db.query(sql, [nome, email, id]);
+    }
+
+
 }

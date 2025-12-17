@@ -6,4 +6,10 @@ router.get("/", UsuarioController.listar);
 
 router.post("/", UsuarioController.criar);
 
+router.get("/:id", UsuarioController.buscarPorId);
+
+router.delete("/:id", UsuarioController.deletar);
+
+router.put("/:id", UsuarioController.atualizar);
+
 export default router;
